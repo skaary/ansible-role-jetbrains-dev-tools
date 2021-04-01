@@ -1,0 +1,6 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: jetbrains-dev-tools
+  description: Intellij IDEA and PyCharm for linux.

@@ -1,0 +1,23 @@
+---
+- name: ensure PyCharm directory exists
+  file:
+    path: "{{ pycharm_dir }}"
+    state: directory
+
+- name: download latest PyCharm tar
+  unarchive:
+    src: "{{ pycharm_url }}"
+    dest: "{{ pycharm_dir }}"
+    remote_src: true
+    extra_opts: [--strip-components=1]
+  become: true
+  when: pycharm
+
+- name: create pycharm desktop file for launcher
+  template:
+    src: pycharm_desktop.j2
+    dest: "{{ launcher_file_path }}/pycharm.desktop"
+    owner: root
+    group: root
+    mode: "0644"
+  become: true

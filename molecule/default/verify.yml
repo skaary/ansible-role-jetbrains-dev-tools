@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Collect package facts.
+      package_facts:
+        manager: "auto"
+
+    # - name: Verify PyCharm is installed.
+    #   assert:
+    #     that:
+    #       - "'pycharm' in ansible_facts.packages"
+    #     success_msg: "PyCharm is installed."
+    #     fail_msg: "PyCharm is not installed."

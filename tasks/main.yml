@@ -1,0 +1,13 @@
+---
+- name: ensure necessary packages exists
+  apt:
+    name: "{{ required_packages }}"
+    state: present
+
+- name: install intellij IDEA
+  include_tasks: idea.yml
+  when: intellij
+
+- name: install PyCharm
+  include_tasks: pycharm.yml
+  when: pycharm

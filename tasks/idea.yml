@@ -1,0 +1,22 @@
+---
+- name: ensure IntelliJ IDEA directory exists
+  file:
+    path: "{{ idea_dir }}"
+    state: directory
+
+- name: download latest IntelliJ IDEA tar
+  unarchive:
+    src: "{{ idea_url }}"
+    dest: "{{ idea_dir }}"
+    remote_src: true
+    extra_opts: [--strip-components=1]
+  become: true
+
+- name: create intellij desktop file for launcher
+  template:
+    src: intellij_desktop.j2
+    dest: "{{ launcher_file_path }}/intellij.desktop"
+    owner: root
+    group: root
+    mode: "0644"
+  become: true

@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+
+  tasks:
+    - name: "Include ansible-role-jetbrains-dev-tools"
+      include_role:
+        name: "ansible-role-jetbrains-dev-tools"
