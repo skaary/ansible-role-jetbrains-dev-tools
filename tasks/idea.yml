@@ -3,6 +3,7 @@
   file:
     path: "{{ idea_dir }}"
     state: directory
+  become: true
 
 - name: download latest IntelliJ IDEA tar
   unarchive:

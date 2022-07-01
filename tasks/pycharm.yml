@@ -3,6 +3,7 @@
   file:
     path: "{{ pycharm_dir }}"
     state: directory
+  become: true
 
 - name: download latest PyCharm tar
   unarchive:

@@ -3,4 +3,14 @@ intellij: true
 intellij_code: IC
 
 pycharm: true
-pycharm_code: PC
+pycharm_code: PCC
+
+idea_url: https://download.jetbrains.com/product?code={{ intellij_code }}&latest&distribution=linux
+idea_dir: /opt/idea
+
+pycharm_url: https://download.jetbrains.com/product?code={{ pycharm_code }}&latest&distribution=linux
+pycharm_dir: /opt/pycharm
+
+launcher_file_path: /usr/share/applications
+required_packages:
+  - unzip
