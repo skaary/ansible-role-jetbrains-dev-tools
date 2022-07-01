@@ -11,6 +11,24 @@ None
 
 None
 
+## Installation
+
+Download the role directly from git by typing into your terminal:
+
+```bash
+ansible-galaxy install git+https://github.com:skaary/ansible-role-jetbrains-dev-tools.git
+```
+
+or
+
+```bash
+ansible-galaxy install git+https://github.com:skaary/ansible-role-jetbrains-dev-tools.git,,jetbrains_dev_tools
+```
+
+to change the installed role name from *ansible-role-jetbrains-dev-tools* to just *jetbrains_dev_tools*.
+
+Alternatively, install the role via a *requirements.yml* file, e.g. when installing multiple roles at once. See [ansible galaxy documentation](https://galaxy.ansible.com/docs/using/installing.html#installing-multiple-roles-from-a-file) for more information.
+
 ## Role variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
@@ -29,15 +47,17 @@ The variables `intellij_code` and `pycharm_code` are used to install a specific 
 
 - `intellij_code: IU` to install the ultimate version intellij IDEA
 - `intellij_code: IC` to install the community version of intellij IDEA
-- `intellij_code: IE` to install the educational version of intellij IDEA
-- `pycharm_code: PY` to install the professional version of PyCharm
-- `pycharm_code: PC` to install the community version of PyCharm
-- `pycharm_code: PE` to install the educational version of PyCharm
+- `pycharm_code: PC` to install the professional version of PyCharm
+- `pycharm_code: PCC` to install the community version of PyCharm
 
 ## Example Playbook
 
 ```yaml
 - hosts: all
   roles:
-    - skaary.jetbrains-dev-tools
+    - ansible-role-jetbrains-dev-tools
 ```
+
+## License
+
+MIT / BSD
