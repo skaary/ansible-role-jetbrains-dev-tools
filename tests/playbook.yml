@@ -1,0 +1,5 @@
+---
+- name: Install Jetbrains dev tools
+  hosts: all
+  roles:
+    - jetbrains_dev_tools
