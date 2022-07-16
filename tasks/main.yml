@@ -3,6 +3,7 @@
   apt:
     name: "{{ required_packages }}"
     state: present
+  become: true
 
 - name: install intellij IDEA
   include_tasks: idea.yml
